@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jenkins_img:
+    container_name: jenkins_img
+    build: .
+    restart: "on-failure"
+    ports:
+      - 8081:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins_file:/var/jenkins_home
+    
+volumes:
+  jenkins_file:
